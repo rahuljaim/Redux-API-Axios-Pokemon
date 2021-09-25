@@ -15,7 +15,6 @@ const onError = (error) => {
 };
 
 const fetchPoke = (PokemonName) => async (dispatch) => {
-  //dispatch(FETCH_REQUEST());
   try {
     await axios
       .get(`https://pokeapi.co/api/v2/pokemon/${PokemonName}`)
@@ -23,8 +22,6 @@ const fetchPoke = (PokemonName) => async (dispatch) => {
         dispatch(getDataSuccess(response.data));
         console.log("success", response.data);
       });
-    //const abilities = respo.data;
-    //dispatch({ type: FETCH_POKEMON_SUCCESS, payload: abilities });
   } catch (error) {
     console.log(error);
     dispatch(onError(error));
