@@ -1,0 +1,34 @@
+import { pokeType } from "./pokeType";
+import axios from "axios";
+
+const getDataSuccess = (data) => {
+  return {
+    type: pokeType.FETCH_POKEMON_SUCCESS,
+    data: data,
+  };
+};
+const onError = (error) => {
+  return {
+    type: pokeType.FETCH_ERROR,
+    data: error,
+  };
+};
+
+const fetchPoke = (PokemonName) => async (dispatch) => {
+  //dispatch(FETCH_REQUEST());
+  try {
+    await axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${PokemonName}`)
+      .then((response) => {
+        dispatch(getDataSuccess(response.data));
+        console.log("success", response.data);
+      });
+    //const abilities = respo.data;
+    //dispatch({ type: FETCH_POKEMON_SUCCESS, payload: abilities });
+  } catch (error) {
+    console.log(error);
+    dispatch(onError(error));
+  }
+};
+
+export default fetchPoke;
