@@ -1,10 +1,11 @@
-import PokeContainer from "./PokeContainer";
 import { connect } from "react-redux";
+import PokeContainer from "../components/PokeContainer";
 import fetchPoke from "../actions/pokeAction";
 
 //to get the data
 const storetoReactUI = (state) => ({
-  data: state.event,
+  data: state.event.data,
+  error: state.event.error,
 });
 console.log("homecontainer");
 //when data send from ui to store

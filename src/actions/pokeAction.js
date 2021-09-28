@@ -4,7 +4,7 @@ import axios from "axios";
 const getDataSuccess = (data) => {
   return {
     type: pokeType.FETCH_POKEMON_SUCCESS,
-    data: data,
+    data: data.abilities,
   };
 };
 const onError = (error) => {

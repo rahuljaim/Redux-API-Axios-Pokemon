@@ -40,6 +40,7 @@ const fetchError = (state, action) => {
   return {
     ...state,
     loading: false,
+    error: true,
     data: [],
   };
 };
