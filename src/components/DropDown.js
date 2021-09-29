@@ -1,29 +1,25 @@
 import React, { Component } from "react";
+import Mock from "../mock/MockData";
 
 class DropDown extends Component {
   render() {
-    const { value } = this.props;
-    console.log("dropdown", this.props.value);
-
+    const item = this.props.item;
     return (
-      <div>
-        {console.log("dropdowns--", this.props)}
-        <select
-          onChange={(e) => this.props.handler(e.target.value)}
-          value={this.props.value}
-          className="form-select form-select-lg mb-3"
-          aria-label=".form-select-lg example"
-        >
-          {value.map((e, i) => {
-            return (
-              <option value={e} key={i}>
-                {e.ability.name}
-              </option>
-            );
-          })}
-        </select>
-      </div>
+      <select
+        className="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example"
+        onChange={(e) => this.props.handler(e.target.value)}
+      >
+        {item.map((event, index) => {
+          return (
+            <option value={event.ability.name} key={index}>
+              {event.ability.name}
+            </option>
+          );
+        })}
+      </select>
     );
   }
 }
+DropDown.defaultProps = { listVal: Mock };
 export default DropDown;
