@@ -2,15 +2,15 @@ import { connect } from "react-redux";
 import PokeContainer from "../components/PokeContainer";
 import fetchPoke from "../actions/pokeAction";
 
-const mapStateToProps = (state) => {
+const storeToUI = (state) => {
   return {
     result: state.event.pdata,
     error: state.event.error,
   };
 };
 
-const mapDispatchProps = (dispatch) => ({
+const UItoAction = (dispatch) => ({
   fetchPoke: (name) => dispatch(fetchPoke(name)),
 });
 
-export default connect(mapStateToProps, mapDispatchProps)(PokeContainer);
+export default connect(storeToUI, UItoAction)(PokeContainer);

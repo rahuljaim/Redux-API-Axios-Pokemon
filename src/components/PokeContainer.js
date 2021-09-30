@@ -1,26 +1,26 @@
 import React, { Component } from "react";
+import DropDown from "../common/DropDown";
 
-import DropDown from "./DropDown";
 class PokeContainer extends Component {
   componentDidMount() {
-    this.setAbility(this.props.listVal.commonList[0].ability.name);
+    this.fetchAxiosCall(this.props.commonList[0].ability.name);
   }
-  setAbility(name) {
+  fetchAxiosCall(name) {
     this.props.fetchPoke(name);
   }
 
   render() {
-    console.log("props values", this.props.listVal);
+    const { commonList } = this.props;
     return (
-      <div className="container">
+      <div className="container" data-test="container">
         <div className="row mt-3">
           <div className="col">
-            <h1>{this.props.listVal.heading}</h1>
+            <h1 data-test="h1tag">Pokemon Redux</h1>
           </div>
-          <div className="col">
+          <div className="col" data-test="commonlistComponent">
             <DropDown
-              item={this.props.listVal.commonList}
-              handler={(name) => this.setAbility(name)}
+              item={commonList}
+              emitEvent={(e) => this.fetchAxiosCall(e)}
             />
           </div>
           <div className="col"></div>
@@ -29,7 +29,7 @@ class PokeContainer extends Component {
           <div className="col">
             <h3>See Abilities</h3>
           </div>
-          <div className="col">
+          <div className="col" data-test="fetchingdata">
             <DropDown item={this.props.result} />
           </div>
           <div className="col"></div>

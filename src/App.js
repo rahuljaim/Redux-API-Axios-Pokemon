@@ -6,7 +6,11 @@ import HomeContainer from "./container/HomeContainer";
 
 class App extends Component {
   render() {
-    return <HomeContainer listVal={this.props.listVal} />;
+    return (
+      <div data-test="loaded-HomeCompoment">
+        <HomeContainer commonList={this.props.listVal.commonList} />;
+      </div>
+    );
   }
 }
 App.defaultProps = { listVal: Mock };

@@ -19,7 +19,7 @@ const fetchPoke = (PokemonName) => async (dispatch) => {
     .get(`https://pokeapi.co/api/v2/pokemon/${PokemonName}`)
     .then((response) => {
       dispatch(getDataSuccess(response.data));
-      console.log("success", response.data);
+      // console.log("success", response.data);
     })
     .catch(function (error) {
       console.log(error);
