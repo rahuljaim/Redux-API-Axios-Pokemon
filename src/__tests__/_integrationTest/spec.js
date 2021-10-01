@@ -34,4 +34,19 @@ describe("actions check", () => {
       expect(actionsCalled[0].payload).toEqual(expectedState.abilities);
     });
   });
+
+  it("Should return the error if it return", () => {
+    const expectedState = false;
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 500,
+        response: expectedState,
+      });
+    });
+    store.dispatch(fetchPoke()).then(() => {
+      const actionsCalled = store.getActions();
+      expect(actionsCalled[0].payload).toEqual(expectedState);
+    });
+  });
 });

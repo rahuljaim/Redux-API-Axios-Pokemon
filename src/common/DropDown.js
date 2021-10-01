@@ -17,7 +17,7 @@ class DropDown extends Component {
         aria-label=".form-select-lg example"
         onChange={(e) => this.submitEvent(e)}
       >
-        {item.length > 0 &&
+        {item.length &&
           item.map((event, index) => {
             return (
               <option value={event.ability.name} key={index}>
