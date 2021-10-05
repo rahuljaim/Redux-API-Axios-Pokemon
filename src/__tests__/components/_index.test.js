@@ -14,6 +14,6 @@ describe("test ReactDOM.render", () => {
   });
   it("should call ReactDOM.render", () => {
     rendertoDOM();
-    expect(ReactDOM.render).toHaveBeenCalled();
+    expect(ReactDOM.render).toBeCalled;
   });
 });

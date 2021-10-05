@@ -7,12 +7,12 @@ const getDataSuccess = (result) => {
     payload: result.abilities,
   };
 };
-const onError = (error) => {
-  return {
-    type: pokeType.FETCH_ERROR,
-    payload: error,
-  };
-};
+// const onError = (error) => {
+//   return {
+//     type: pokeType.FETCH_ERROR,
+//     payload: error,
+//   };
+// };
 
 const fetchPoke = (PokemonName) => async (dispatch) => {
   await axios
@@ -21,9 +21,9 @@ const fetchPoke = (PokemonName) => async (dispatch) => {
       dispatch(getDataSuccess(response.data));
       // console.log("success", response.data);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
-      dispatch(onError(error));
+      dispatch({ type: pokeType.FETCH_ERROR, payload: error });
     });
 };
 

@@ -1,10 +1,11 @@
 import React from "react";
+import fetchPoke from "../../actions/pokeAction";
 import { shallow } from "enzyme";
-import PokeContainer from "./../../components/PokeContainer";
-import { findByTestArr } from "./../../../utils";
+import PokeMon from "../../components/PokeMon";
+import { findByTestArr } from "../../../utils";
 
 const setUp = (props = {}) => {
-  const component = shallow(<PokeContainer {...props} />);
+  const component = shallow(<PokeMon {...props} />);
   return component;
 };
 
@@ -15,14 +16,22 @@ describe("Pokemon Container", () => {
   });
 
   it("container render without errors", () => {
-    const component = shallow(<PokeContainer />);
+    const component = shallow(<PokeMon />);
     const wrapper = findByTestArr(component, "container");
     expect(wrapper.length).toBe(1);
   });
   it("column render without errors", () => {
-    const component = shallow(<PokeContainer />);
+    const component = shallow(<PokeMon />);
     const wrapper = findByTestArr(component, "h1tag");
     expect(wrapper.length).toBe(1);
+  });
+
+  it("to check the fetch poke", () => {
+    const fetchAxiosCall = jest.fn();
+    const props1 = { fetchPoke: (fn) => fn };
+    const component = shallow(<PokeMon {...props1} />);
+    console.log("dddddd----4-4-4-4-", component.instance());
+    expect(component.instance().fetchAxiosCall()).toBeCalled;
   });
 });
 

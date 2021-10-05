@@ -2,7 +2,7 @@ import pokeType from "../actions/pokeType";
 
 const INITIAL_STATE = {
   pdata: [],
-  error: null,
+  error: "",
 };
 
 const pokeReducer = (state = INITIAL_STATE, { payload, type }) => {
@@ -11,7 +11,7 @@ const pokeReducer = (state = INITIAL_STATE, { payload, type }) => {
       return {
         ...state,
         pdata: payload,
-        error: null,
+        error: false,
       };
 
     case pokeType.FETCH_ERROR:

@@ -3,7 +3,14 @@ import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import moxios from "moxios";
 import pokeType from "../../actions/pokeType";
 import { testStore } from "../../../utils";
-import fetchPoke from "./../../actions/pokeAction";
+import fetchPoke from "../../actions/pokeAction";
+import MockAdapter from "axios-mock-adapter";
+import axios from "axios";
+import thunk from "redux-thunk";
+import configureStore from "redux-mock-store";
+const middleware = [thunk];
+const mockStore = configureStore(middleware);
+const mock = new MockAdapter(axios);
 
 const store = testStore();
 
@@ -44,9 +51,10 @@ describe("actions check", () => {
         response: expectedState,
       });
     });
-    store.dispatch(fetchPoke()).then(() => {
+    return store.dispatch(fetchPoke()).then(() => {
       const actionsCalled = store.getActions();
-      expect(actionsCalled[0].payload).toEqual(expectedState);
+      console.log("action calledddddd", actionsCalled[1].type);
+      expect(actionsCalled[1].type).toEqual(pokeType.FETCH_ERROR);
     });
   });
 });

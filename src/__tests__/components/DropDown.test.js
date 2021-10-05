@@ -29,5 +29,9 @@ describe("re-usable Component", () => {
       const selectoption = findByTestArr(wrapper, "selectcomponent");
       expect(selectoption.length).toBe(1);
     });
+
+    it("should check the dropdown", () => {
+      expect(wrapper.instance().submitEvent()).toBeCalled;
+    });
   });
 });
