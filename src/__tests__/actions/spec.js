@@ -4,13 +4,6 @@ import moxios from "moxios";
 import pokeType from "../../Apps/actions/pokeType";
 import { testStore } from "../../../utils";
 import fetchPoke from "../../Apps/actions/pokeAction";
-import MockAdapter from "axios-mock-adapter";
-import axios from "axios";
-import thunk from "redux-thunk";
-import configureStore from "redux-mock-store";
-const middleware = [thunk];
-const mockStore = configureStore(middleware);
-const mock = new MockAdapter(axios);
 
 const store = testStore();
 

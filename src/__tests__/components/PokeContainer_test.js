@@ -27,10 +27,9 @@ describe("Pokemon Container", () => {
   });
 
   it("to check the fetch poke", () => {
-    const fetchAxiosCall = jest.fn();
     const props1 = { fetchPoke: (fn) => fn };
     const component = shallow(<PokeMon {...props1} />);
-    console.log("dddddd----4-4-4-4-", component.instance());
+    console.log("pokecontainer-component-instance", component.instance());
     expect(component.instance().fetchAxiosCall()).toBeCalled;
   });
 });

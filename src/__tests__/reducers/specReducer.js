@@ -30,7 +30,6 @@ describe("should check reducer", () => {
   });
 
   it("should return new erros whiel returning", () => {
-    const posts = { pdata: undefined, error: null };
     const nState = pokeReducer(INITIAL_STATE, {
       type: pokeType.FETCH_ERROR,
       error: true,
