@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { findByTestArr } from "./../../../utils";
-import App from "./../../App";
+import App from "../../Apps/App";
 
 const setUp = (props = {}) => {
   const component = shallow(<App {...props} />);

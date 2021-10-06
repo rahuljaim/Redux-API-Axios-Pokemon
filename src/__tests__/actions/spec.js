@@ -1,9 +1,9 @@
 import Enzyme from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import moxios from "moxios";
-import pokeType from "../../actions/pokeType";
+import pokeType from "../../Apps/actions/pokeType";
 import { testStore } from "../../../utils";
-import fetchPoke from "../../actions/pokeAction";
+import fetchPoke from "../../Apps/actions/pokeAction";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
 import thunk from "redux-thunk";

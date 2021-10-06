@@ -1,10 +1,10 @@
 import {
   mapStateToProps,
   mapDispatchToProps,
-} from "../../container/DropDownContainer";
+} from "../../Apps/container/DropDownContainer";
 import Enzyme, { shallow } from "enzyme";
 
-import DropDown from "../../common/DropDown";
+import DropDown from "../../Apps/common/DropDown";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 Enzyme.configure({ adapter: new Adapter() });
 

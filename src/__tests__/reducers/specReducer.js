@@ -1,5 +1,5 @@
-import pokeType from "../../actions/pokeType";
-import pokeReducer from "../../reducers/pokeReducer";
+import pokeType from "../../Apps/actions/pokeType";
+import pokeReducer from "../../Apps/reducers/pokeReducer";
 import Enzyme from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 

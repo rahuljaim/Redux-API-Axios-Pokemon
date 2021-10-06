@@ -1,7 +1,7 @@
 import {
   mapStateToProps,
   mapDispatchToProps,
-} from "../../container/HomeContainer";
+} from "../../Apps/container/HomeContainer";
 
 describe("App", () => {
   it("mapStateToProps working", () => {

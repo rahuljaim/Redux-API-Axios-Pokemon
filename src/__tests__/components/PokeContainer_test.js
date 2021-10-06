@@ -1,7 +1,7 @@
 import React from "react";
-import fetchPoke from "../../actions/pokeAction";
+import fetchPoke from "../../Apps/actions/pokeAction";
 import { shallow } from "enzyme";
-import PokeMon from "../../components/PokeMon";
+import PokeMon from "../../Apps/components/PokeMon";
 import { findByTestArr } from "../../../utils";
 
 const setUp = (props = {}) => {
