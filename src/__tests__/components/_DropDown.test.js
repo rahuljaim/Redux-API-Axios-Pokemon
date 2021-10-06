@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { findByTestArr, checkProps } from "./../../../utils/";
+import { findByTestArr, checkProps } from "../../../utils";
 import DropDown from "../../Apps/common/DropDown";
 
 describe("re-usable Component", () => {

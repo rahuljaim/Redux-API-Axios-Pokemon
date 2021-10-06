@@ -3,7 +3,6 @@ import {
   mapDispatchToProps,
 } from "../../Apps/container/DropDownContainer";
 import Enzyme, { shallow } from "enzyme";
-
 import DropDown from "../../Apps/common/DropDown";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 Enzyme.configure({ adapter: new Adapter() });
