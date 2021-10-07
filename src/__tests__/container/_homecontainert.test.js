@@ -7,8 +7,6 @@ describe("App", () => {
   it("mapStateToProps working", () => {
     const INITIAL_STATE = {
       event: { pdata: "data1", error: "error" },
-      //   pdata: [],
-      //   error: "",
     };
     // console.log("mapstatetoprops----", mapStateToProps());
     expect(mapStateToProps(INITIAL_STATE)).toBeDefined;
